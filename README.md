@@ -48,7 +48,7 @@ Este es un sistema de gestión para hoteles, desarrollado originalmente como un 
 
 ## 📸 Vistas Previas
 
-![Pantalla de Inicio de Sesión](URL_de_la_imagen_que_copiaste)
+![Pantalla de Inicio de Sesión](Screenshot 2025-09-09 000906.png)
 
 ![Dashboard del Administrador con estadísticas y gestión de empleados](URL_de_la_imagen_que_copiaste)
 
