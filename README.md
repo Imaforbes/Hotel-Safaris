@@ -52,7 +52,7 @@ Este es un sistema de gestión para hoteles, desarrollado originalmente como un 
 
 ![Dashboard del Administrador con estadísticas y gestión de empleados](Screenshot 2025-09-09 001436.png)
 
-![Panel de Empleado unificado para gestionar las operaciones del hotel](URL_de_la_imagen_que_copiaste)
+![Panel de Empleado unificado para gestionar las operaciones del hotel](Screenshot 2025-09-09 002814.png)
 
 ---
 
