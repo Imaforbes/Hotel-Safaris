@@ -52,7 +52,7 @@ Este es un sistema de gestión para hoteles, desarrollado originalmente como un 
 
 ![Dashboard del Administrador con estadísticas y gestión de empleados](https://github.com/Imaforbes/Hotel-Safaris/blob/main/Screenshot%202025-09-09%20001436.png?raw=true)
 
-![Panel de Empleado unificado para gestionar las operaciones del hotel](Screenshot 2025-09-09 002814.png)
+![Panel de Empleado unificado para gestionar las operaciones del hotel](https://github.com/Imaforbes/Hotel-Safaris/blob/main/Screenshot%202025-09-09%20002814.png?raw=true)
 
 ---
 
