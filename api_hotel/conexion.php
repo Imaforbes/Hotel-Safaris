@@ -1,4 +1,17 @@
 <?php
+/**
+ * ==============================================================================
+ * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - CONECTOR UNIVERSAL PDO MYSQL
+ * ==============================================================================
+ * Autor: Imanol Forbes
+ * Stack: PHP 8+, PDO (PHP Data Objects), MySQL 8.0+ / MariaDB
+ * Descripción:
+ *   Motor de conexión segura con soporte inteligente multi-entorno.
+ *   Detecta automáticamente si se ejecuta en MAMP en macOS (socket Unix y
+ *   contraseña 'root') o en XAMPP/WAMP en Windows/Linux (localhost sin contraseña),
+ *   evitando errores de "Access Denied" al clonar el repositorio.
+ * ==============================================================================
+ */
 // Evitar recrear la conexión si ya existe
 if (!isset($pdo) || !($pdo instanceof PDO)) {
     $bd = 'hotel';

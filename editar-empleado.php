@@ -1,4 +1,16 @@
 <?php
+/**
+ * ==============================================================================
+ * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - VISTA DE EDICIÓN DE EMPLEADO
+ * ==============================================================================
+ * Autor: Imanol Forbes
+ * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, RBAC Session Control
+ * Descripción:
+ *   Vista administrativa para consultar y editar el perfil de un empleado
+ *   específico (cargo, rol, nombre y usuario) utilizando sentencias preparadas
+ *   de PDO para prevenir inyección SQL.
+ * ==============================================================================
+ */
 session_start();
 if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
     header('Location: index.php');

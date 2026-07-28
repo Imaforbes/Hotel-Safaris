@@ -1,4 +1,16 @@
 <?php
+/**
+ * ==============================================================================
+ * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - PANEL EJECUTIVO DE ADMINISTRACIÓN
+ * ==============================================================================
+ * Autor: Imanol Forbes
+ * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, RBAC Session Control
+ * Descripción:
+ *   Panel ejecutivo con acceso restringido al rol 'admin'. Muestra estadísticas
+ *   operativas en tiempo real (empleados, clientes, ocupación y reservas) y
+ *   permite la gestión integral CRUD del personal del hotel.
+ * ==============================================================================
+ */
 session_start();
 if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
     header('Location: index.php');

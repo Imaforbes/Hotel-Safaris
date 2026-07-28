@@ -1,4 +1,16 @@
 <?php
+/**
+ * ==============================================================================
+ * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - PANEL OPERATIVO DE PERSONAL
+ * ==============================================================================
+ * Autor: Imanol Forbes
+ * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, RBAC Session Control
+ * Descripción:
+ *   Centro de control operativo del hotel. Permite al personal y conserjería
+ *   gestionar clientes, disponibilidad de habitaciones, registro de reservas y
+ *   catálogo de actividades ecoturísticas de manera transaccional.
+ * ==============================================================================
+ */
 session_start();
 // Guardián de seguridad: solo permite el acceso a administradores y empleados.
 if (!isset($_SESSION['usuario']) || !in_array($_SESSION['rol'], ['admin', 'empleado'])) {

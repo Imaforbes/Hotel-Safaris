@@ -1,5 +1,17 @@
 <?php
-// perfiles.php (VERSIÓN FINAL Y CORREGIDA)
+/**
+ * ==============================================================================
+ * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - CONTROLADOR DE AUTENTICACIÓN
+ * ==============================================================================
+ * Autor: Imanol Forbes
+ * Stack: PHP 8+, PDO MySQL, Bcrypt Password Verification, RBAC Session
+ * Descripción:
+ *   Controlador del formulario de inicio de sesión (POST). Valida las credenciales
+ *   contra la tabla `empleados` utilizando sentencias preparadas y `password_verify()`.
+ *   Redirige al panel ejecutivo (`administrador.php`) o al panel operativo
+ *   (`panel-empleado.php`) según el rol asignado en base de datos.
+ * ==============================================================================
+ */
 require_once 'conexion.php';
 session_start();
 

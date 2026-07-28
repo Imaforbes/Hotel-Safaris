@@ -1,3 +1,17 @@
+<?php
+/**
+ * ==============================================================================
+ * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - PORTAL DE AUTENTICACIÓN (LOGIN)
+ * ==============================================================================
+ * Autor: Imanol Forbes
+ * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, Bcrypt Auth
+ * Descripción:
+ *   Punto de entrada principal del sistema. Maneja la autenticación segura de
+ *   usuarios empleando hashes Bcrypt y redirección basada en roles (RBAC).
+ *   Integrado con marco editorial técnico (.hallmark-header) y tema Safari Luxury.
+ * ==============================================================================
+ */
+?>
 <!DOCTYPE html>
 <html lang="es">
 

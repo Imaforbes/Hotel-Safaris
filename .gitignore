@@ -1,6 +1,12 @@
-# Archivos de sistema de macOS
+# Archivos de sistema de macOS y editores
 .DS_Store
 ._*
+.vscode/
+*.log
+
+# Variables de entorno secretas (por seguridad)
+.env
+.env.local
 
 # Respaldo local de versión universitaria 2023 (no subir a GitHub)
 _respaldo_universidad_2023/
