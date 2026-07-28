@@ -1,6 +1,5 @@
 -- ==============================================================================
--- SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - ESQUEMA Y DATOS DE PRUEBA (SEED)
--- Autor: Imanol Forbes (Refactorizado 2025)
+-- Autor: Imanol (@imaforbes)
 -- Motor: MySQL 8.0+ / MariaDB 10.5+ (PDO PHP 8+)
 -- Juego de Caracteres: UTF-8 (utf8mb4_unicode_ci)
 -- ==============================================================================

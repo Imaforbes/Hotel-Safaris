@@ -3,7 +3,7 @@
  * ==============================================================================
  * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - PANEL OPERATIVO DE PERSONAL
  * ==============================================================================
- * Autor: Imanol Forbes
+ * Autor: Imanol (@imaforbes)
  * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, RBAC Session Control
  * Descripción:
  *   Centro de control operativo del hotel. Permite al personal y conserjería
@@ -54,7 +54,7 @@ $total_actividades = $stmt_actividades->fetch()['total'];
     <header class="hallmark-header">
         <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S - STAFF]</span>
         <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
-        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL (@imaforbes)]</span>
         <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
     </header>
 

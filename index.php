@@ -3,7 +3,7 @@
  * ==============================================================================
  * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - PORTAL DE AUTENTICACIÓN (LOGIN)
  * ==============================================================================
- * Autor: Imanol Forbes
+ * Autor: Imanol (@imaforbes)
  * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, Bcrypt Auth
  * Descripción:
  *   Punto de entrada principal del sistema. Maneja la autenticación segura de
@@ -28,7 +28,7 @@
     <header class="hallmark-header w-100">
         <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S]</span>
         <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
-        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL (@imaforbes)]</span>
         <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
     </header>
     <main class="d-flex align-items-center justify-content-center flex-grow-1 w-100 p-3">

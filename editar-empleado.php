@@ -3,7 +3,7 @@
  * ==============================================================================
  * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - VISTA DE EDICIÓN DE EMPLEADO
  * ==============================================================================
- * Autor: Imanol Forbes
+ * Autor: Imanol (@imaforbes)
  * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, RBAC Session Control
  * Descripción:
  *   Vista administrativa para consultar y editar el perfil de un empleado
@@ -54,7 +54,7 @@ if (!$empleado) {
     <header class="hallmark-header">
         <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S - EDIT]</span>
         <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
-        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL (@imaforbes)]</span>
         <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
     </header>
     <main class="container mt-5">

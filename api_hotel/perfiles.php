@@ -3,7 +3,7 @@
  * ==============================================================================
  * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - CONTROLADOR DE AUTENTICACIÓN
  * ==============================================================================
- * Autor: Imanol Forbes
+ * Autor: Imanol (@imaforbes)
  * Stack: PHP 8+, PDO MySQL, Bcrypt Password Verification, RBAC Session
  * Descripción:
  *   Controlador del formulario de inicio de sesión (POST). Valida las credenciales

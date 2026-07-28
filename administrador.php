@@ -3,7 +3,7 @@
  * ==============================================================================
  * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - PANEL EJECUTIVO DE ADMINISTRACIÓN
  * ==============================================================================
- * Autor: Imanol Forbes
+ * Autor: Imanol (@imaforbes)
  * Stack: PHP 8+, PDO MySQL, Bootstrap 5.3, RBAC Session Control
  * Descripción:
  *   Panel ejecutivo con acceso restringido al rol 'admin'. Muestra estadísticas
@@ -59,7 +59,7 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <header class="hallmark-header">
         <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S - ADMIN]</span>
         <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
-        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL (@imaforbes)]</span>
         <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
     </header>
 

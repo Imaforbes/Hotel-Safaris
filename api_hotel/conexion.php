@@ -3,7 +3,7 @@
  * ==============================================================================
  * SISTEMA DE GESTIÓN HOTELERA "SAFARI'S" - CONECTOR UNIVERSAL PDO MYSQL
  * ==============================================================================
- * Autor: Imanol Forbes
+ * Autor: Imanol (@imaforbes)
  * Stack: PHP 8+, PDO (PHP Data Objects), MySQL 8.0+ / MariaDB
  * Descripción:
  *   Motor de conexión segura con soporte inteligente multi-entorno.

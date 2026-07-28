@@ -94,7 +94,7 @@ Hotel-Safaris/
 ## 🇲🇽 Documentación en Español
 
 ### 📌 Descripción General
-**Sistema de Gestión Hotelera "Safari's"** es una plataforma web modular para la administración y operación diaria de un hotel o resort ecoturístico, desarrollada por **Imanol Forbes**. Refactorizado con estándares profesionales, el sistema separa la gestión administrativa de la operativa mediante un control de acceso por roles (RBAC) dual, respaldado por consultas asíncronas AJAX y seguridad de servidor PHP 8 + PDO MySQL.
+**Sistema de Gestión Hotelera "Safari's"** es una plataforma web modular para la administración y operación diaria de un hotel o resort ecoturístico, desarrollada por **Imanol (`@imaforbes`)**. Refactorizado con estándares profesionales, el sistema separa la gestión administrativa de la operativa mediante un control de acceso por roles (RBAC) dual, respaldado por consultas asíncronas AJAX y seguridad de servidor PHP 8 + PDO MySQL.
 
 ---
 
@@ -106,6 +106,6 @@ Hotel-Safaris/
 
 ---
 
-### 👨‍💻 Autor
-**Imanol Forbes** — *Full-Stack Web & Applications Developer*  
+### 👨‍💻 Autor / Author
+**Imanol (`@imaforbes`)** — *Full-Stack Web & Applications Developer*  
 [Repositorio Oficial en GitHub ↗](https://github.com/Imaforbes/Hotel-Safaris)
