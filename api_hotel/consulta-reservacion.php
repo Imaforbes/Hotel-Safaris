@@ -66,7 +66,7 @@ if (isset($_POST['numero_rese']) && !empty($_POST['numero_rese'])) {
                 <?php else: ?>
                     <div class="alert alert-warning">No se encontraron resultados.</div>
                 <?php endif; ?>
-                <a href="../recepcion.php" class="btn btn-secondary mt-3">Regresar</a>
+                <a href="../panel-empleado.php" class="btn btn-secondary mt-3">Regresar al Panel</a>
             </div>
         </div>
     </main>

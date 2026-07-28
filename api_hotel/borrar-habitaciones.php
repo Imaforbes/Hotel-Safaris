@@ -4,6 +4,6 @@ if (isset($_POST['codigo_hab'])) {
     $sql = "DELETE FROM habitaciones WHERE codigo_hab = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$_POST['codigo_hab']]);
-    header("Location: ../recepcion.php");
+    header("Location: ../panel-empleado.php?status=ok");
     exit();
 }

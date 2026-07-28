@@ -4,6 +4,6 @@ if (isset($_POST['codigo_cli'])) {
     $sql = "DELETE FROM cliente WHERE codigo_cli = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$_POST['codigo_cli']]);
-    header("Location: ../recepcion.php");
+    header("Location: ../panel-empleado.php?status=ok");
     exit();
 }

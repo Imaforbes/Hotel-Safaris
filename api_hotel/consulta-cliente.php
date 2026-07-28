@@ -68,7 +68,7 @@ if (isset($_POST['codigo_cli']) && !empty($_POST['codigo_cli'])) {
                 <?php else: ?>
                     <div class="alert alert-warning">No se encontraron resultados para la búsqueda.</div>
                 <?php endif; ?>
-                <a href="../recepcion.php" class="btn btn-secondary mt-3">Regresar</a>
+                <a href="../panel-empleado.php" class="btn btn-secondary mt-3">Regresar al Panel</a>
             </div>
         </div>
     </main>

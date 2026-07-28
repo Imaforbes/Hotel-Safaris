@@ -58,7 +58,7 @@ if (isset($_POST['codigo_cli']) && !empty($_POST['codigo_cli'])) {
                 <?php else: ?>
                     <div class="alert alert-warning">El cliente "<?php echo htmlspecialchars($codigo_buscado); ?>" no tiene actividades registradas.</div>
                 <?php endif; ?>
-                <a href="../empleados.php" class="btn btn-secondary mt-3">Regresar</a>
+                <a href="../panel-empleado.php" class="btn btn-secondary mt-3">Regresar al Panel</a>
             </div>
         </div>
     </main>
