@@ -13,9 +13,11 @@
  * ==============================================================================
  */
 require_once 'conexion.php';
+require_once 'csrf.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usuario'], $_POST['contrasena'])) {
+   csrf_verify();
 
    $usuario_form = $_POST['usuario'];
    $contrasena_form = $_POST['contrasena'];

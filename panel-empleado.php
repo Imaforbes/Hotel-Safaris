@@ -18,6 +18,7 @@ if (!isset($_SESSION['usuario']) || !in_array($_SESSION['rol'], ['admin', 'emple
     exit();
 }
 require_once 'api_hotel/conexion.php';
+require_once 'api_hotel/csrf.php';
 
 // --- LÓGICA PARA ESTADÍSTICAS DEL EMPLEADO ---
 // Contar total de clientes
@@ -269,7 +270,38 @@ $total_actividades = $stmt_actividades->fetch()['total'];
         </div>
     </main>
 
+    <!-- FASE 4: Contenedor de Toasts Flotantes para UX Moderna -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+        <div id="statusToast" class="toast align-items-center text-white bg-success border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">
+                    Operación completada con éxito.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- FUNCIÓN HELPER PARA TOASTS FLOTANTES (FASE 4) ---
+        function showToast(message, isError = false) {
+            const toastEl = document.getElementById('statusToast');
+            const toastBody = document.getElementById('toastMessage');
+            toastBody.textContent = message;
+            toastEl.className = 'toast align-items-center text-white border-0 shadow-lg ' + (isError ? 'bg-danger' : 'bg-success');
+            const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+            toast.show();
+        }
+
+        // Mostrar Toast automáticamente si existe parámetro de éxito en la URL (?status=ok)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('status')) {
+            showToast('Registro operativo procesado correctamente.', false);
+        } else if (urlParams.has('error')) {
+            showToast('Error en la operación solicitada.', true);
+        }
+    </script>
 </body>
 
 </html>

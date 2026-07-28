@@ -1,11 +1,13 @@
 <?php
 header('Content-Type: application/json');
 require_once 'conexion.php';
+require_once 'csrf.php';
 session_start();
 
 $response = ['success' => false, 'message' => 'Petición incorrecta o no autorizada.'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin' && isset($_POST['Codigo_empl'])) {
+    csrf_verify();
 
     $codigo_empl = $_POST['Codigo_empl'];
 

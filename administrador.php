@@ -17,6 +17,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
     exit();
 }
 require_once 'api_hotel/conexion.php';
+require_once 'api_hotel/csrf.php';
 
 // --- LÓGICA PARA ESTADÍSTICAS DEL ADMINISTRADOR ---
 // Contar total de empleados
@@ -67,6 +68,7 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="container">
             <a class="navbar-brand" href="#"><i class="bi bi-shield-lock-fill"></i> Hotel "Safari's" - Modo Administrador</a>
             <form action="api_hotel/cerrar-sesion.php" method="POST" class="d-flex">
+                <?php echo csrf_field(); ?>
                 <button class="btn btn-outline-danger" type="submit"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</button>
             </form>
         </div>
@@ -116,12 +118,16 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-dark text-white">
+                    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center flex-wrap gap-2">
                         <h4 class="mb-0"><i class="bi bi-person-badge"></i> Lista de Empleados</h4>
+                        <div class="input-group input-group-sm" style="max-width: 280px;">
+                            <span class="input-group-text bg-secondary text-white border-0"><i class="bi bi-search"></i></span>
+                            <input type="text" id="liveSearchInput" class="form-control" placeholder="Buscar en tiempo real...">
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover" id="empleadosTable">
                                 <thead class="table-dark">
                                     <tr>
                                         <th>Usuario</th>
@@ -161,6 +167,7 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="card-body">
                         <form action="api_hotel/insertar-empleado.php" method="POST">
+                            <?php echo csrf_field(); ?>
                             <div class="mb-2"><label class="form-label">Código Empleado</label><input type="text" class="form-control" name="Codigo_empl" required></div>
                             <div class="mb-2"><label class="form-label">Usuario</label><input type="text" class="form-control" name="Usuario" required></div>
                             <div class="mb-2"><label class="form-label">Contraseña</label><input type="password" class="form-control" name="passwor" required></div>
@@ -182,8 +189,44 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </main>
 
+    <!-- FASE 4: Contenedor de Toasts Flotantes para UX Moderna -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+        <div id="statusToast" class="toast align-items-center text-white bg-success border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">
+                    Operación completada con éxito.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // --- FUNCIÓN HELPER PARA TOASTS FLOTANTES (FASE 4) ---
+        function showToast(message, isError = false) {
+            const toastEl = document.getElementById('statusToast');
+            const toastBody = document.getElementById('toastMessage');
+            toastBody.textContent = message;
+            toastEl.className = 'toast align-items-center text-white border-0 shadow-lg ' + (isError ? 'bg-danger' : 'bg-success');
+            const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+            toast.show();
+        }
+
+        // --- BUSCADOR INSTANTÁNEO EN TIEMPO REAL (FASE 2) ---
+        const searchInput = document.getElementById('liveSearchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const term = this.value.toLowerCase().trim();
+                const rows = document.querySelectorAll('#empleadosTable tbody tr');
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(term) ? '' : 'none';
+                });
+            });
+        }
+
+        // --- BORRADO ASÍNCRONO CON CSRF Y TOAST (FASE 1 & 4) ---
         document.addEventListener('click', function(event) {
             const deleteButton = event.target.closest('.delete-btn');
             if (deleteButton) {
@@ -191,6 +234,7 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 if (confirm(`¿Estás seguro de que quieres eliminar al empleado con código ${codigoEmpleado}?`)) {
                     const formData = new FormData();
                     formData.append('Codigo_empl', codigoEmpleado);
+                    formData.append('csrf_token', "<?php echo csrf_token(); ?>");
                     fetch('api_hotel/borrar-empleado.php', {
                             method: 'POST',
                             body: formData
@@ -198,15 +242,24 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         .then(response => response.json())
                         .then(data => {
                             if (data.success) {
-                                alert(data.message);
+                                showToast(data.message, false);
                                 document.querySelector(`tr[data-row-codigo="${codigoEmpleado}"]`)?.remove();
                             } else {
-                                alert('Error: ' + data.message);
+                                showToast('Error: ' + data.message, true);
                             }
-                        }).catch(error => console.error('Error:', error));
+                        }).catch(error => {
+                            console.error('Error:', error);
+                            showToast('Error de red o del servidor.', true);
+                        });
                 }
             }
         });
+
+        // Mostrar Toast si existe parámetro de éxito en URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('status')) {
+            showToast('Personal registrado/actualizado correctamente.', false);
+        }
     </script>
 </body>
 

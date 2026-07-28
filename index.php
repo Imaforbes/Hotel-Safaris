@@ -11,6 +11,7 @@
  *   Integrado con marco editorial técnico (.hallmark-header) y tema Safari Luxury.
  * ==============================================================================
  */
+require_once 'api_hotel/csrf.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,6 +47,7 @@
                 <?php endif; ?>
 
                 <form action="api_hotel/perfiles.php" method="POST">
+                    <?php echo csrf_field(); ?>
                     <div class="mb-3 input-group">
                         <span class="input-group-text">
                             <i class="bi bi-person-fill"></i>
