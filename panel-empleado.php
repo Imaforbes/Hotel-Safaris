@@ -39,6 +39,13 @@ $total_actividades = $stmt_actividades->fetch()['total'];
 
 <body>
 
+    <header class="hallmark-header">
+        <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S - STAFF]</span>
+        <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
+    </header>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="bi bi-person-workspace"></i> Hotel "Safari's" - Panel de Empleado</a>

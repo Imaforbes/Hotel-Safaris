@@ -44,6 +44,13 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
+    <header class="hallmark-header">
+        <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S - ADMIN]</span>
+        <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
+    </header>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="bi bi-shield-lock-fill"></i> Hotel "Safari's" - Modo Administrador</a>

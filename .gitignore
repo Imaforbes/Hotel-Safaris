@@ -1,0 +1,7 @@
+# Archivos de sistema de macOS
+.DS_Store
+._*
+
+# Respaldo local de versión universitaria 2023 (no subir a GitHub)
+_respaldo_universidad_2023/
+_respaldo_universidad_2023/*

@@ -1,99 +1,111 @@
-# Sistema de Gestión Hotelera "Safari's" 🏨
+# 🏨 Safari's Hotel Management System
+### Enterprise-Grade PHP 8 & PDO MySQL Resort Architecture | Dual Role-Based Access Control (RBAC)
 
-# Autor: [Imanol]
-
-# Fecha: [8 de septiembre del 2025 ]
-
-![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?style=for-the-badge&logo=php)
+![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-4479A1?style=for-the-badge&logo=mysql)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript)
-
-Este es un sistema de gestión para hoteles, desarrollado originalmente como un proyecto universitario y posteriormente refactorizado y modernizado por completo para seguir las mejores prácticas de seguridad y desarrollo web actuales. La aplicación permite manejar las operaciones diarias de un hotel, con roles de usuario diferenciados para administradores y empleados.
-
----
-
-## ✨ Características Principales
-
-- **Control de Acceso Basado en Roles:** Dos niveles de permiso (`Administrador` y `Empleado`) con paneles y funcionalidades personalizadas.
-- **Dashboard con Estadísticas:** Vistas generales y operativas con datos clave como número de empleados, clientes, y estado de las habitaciones.
-- **Gestión de Empleados (CRUD):** El administrador puede crear, ver, editar y eliminar cuentas de empleados, incluyendo la asignación de roles.
-- **Gestión de Operaciones:** El personal puede gestionar Clientes, Habitaciones, Reservas y Actividades ofrecidas por el hotel.
-- **Lógica de Negocio Automatizada:** El sistema actualiza automáticamente la disponibilidad de una habitación al crear o eliminar una reserva.
-- **Seguridad Robusta:**
-  - Protección contra Inyección SQL mediante el uso de **PDO y Sentencias Preparadas**.
-  - Almacenamiento seguro de contraseñas utilizando **hashing con `password_hash()`**.
-  - Protección de páginas por rol de sesión.
-- **Experiencia de Usuario Moderna (AJAX):** Funcionalidades asíncronas con la **API Fetch** para eliminar registros sin necesidad de recargar la página.
+![Security](https://img.shields.io/badge/Security-PDO%20%2F%20Bcrypt-4ade80?style=for-the-badge)
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🌐 English Documentation
 
-### Frontend
+### 📌 Overview
+**Safari's Hotel Management System** is a full-stack resort operations and administration platform developed by **Imanol Forbes**. Originally conceptualized as an academic engineering project, it has been completely architected and refactored into a modern, hardened web application following strict backend security protocols and high-craft UI aesthetics.
 
-- HTML5
-- CSS3 (con Variables CSS para fácil personalización)
-- **Bootstrap 5** para un diseño responsivo y moderno.
-- **JavaScript (ES6+)** para la interactividad y llamadas a la API (`Fetch`).
-
-### Backend
-
-- **PHP 8+**
-- **PDO (PHP Data Objects)** para una conexión segura a la base de datos.
-- **MySQL / MariaDB** como motor de base de datos.
-- Arquitectura de API simple para las operaciones del backend.
+The system enforces **Role-Based Access Control (RBAC)** to separate high-level executive management from day-to-day hospitality operations, powered by an asynchronous AJAX frontend and a secure PHP 8 / PDO MySQL backend.
 
 ---
 
-## 📸 Vistas Previas
+### ✨ Key Features & Technical Highlights
 
-![Pantalla de Inicio de Sesión](https://github.com/Imaforbes/Hotel-Safaris/blob/main/Screenshot%202025-09-09%20000906.png?raw=true)
-
-![Dashboard del Administrador con estadísticas y gestión de empleados](https://github.com/Imaforbes/Hotel-Safaris/blob/main/Screenshot%202025-09-09%20001436.png?raw=true)
-
-![Panel de Empleado unificado para gestionar las operaciones del hotel](https://github.com/Imaforbes/Hotel-Safaris/blob/main/Screenshot%202025-09-09%20002814.png?raw=true)
-
----
-
-## 🚀 Instalación y Puesta en Marcha
-
-Sigue estos pasos para ejecutar el proyecto en un entorno local (como XAMPP o WAMP).
-
-1.  **Prerrequisitos:**
-
-    - Tener un servidor local como XAMPP o WAMP instalado, con Apache y MySQL en funcionamiento.
-    - Tener acceso a un gestor de bases de datos como phpMyAdmin.
-
-2.  **Clonar el Repositorio:**
-
-    ```bash
-    git clone [https://github.com/Imaforbes/Hotel-Safaris.git](https://github.com/Imaforbes/Hotel-Safaris.git)
-    ```
-
-    O simplemente descarga y descomprime el archivo ZIP en tu carpeta `htdocs` (para XAMPP) o `www` (para WAMP).
-
-3.  **Configurar la Base de Datos:**
-
-    - Abre phpMyAdmin.
-    - Crea una nueva base de datos llamada `hotel`.
-    - Selecciona la base de datos `hotel`, ve a la pestaña **Importar** y sube el archivo `hotel.sql` que se encuentra en el proyecto.
-
-4.  **Configurar la Conexión:**
-
-    - Abre el archivo `api_hotel/conexion.php`.
-    - Si tu base de datos tiene una contraseña, modifícala en la variable `$pw`.
-
-5.  **Ejecutar:**
-    - Abre tu navegador y ve a `http://localhost/hotel/` (o el nombre de la carpeta de tu proyecto).
+- **🔒 Hardened Backend Security:**
+  - **Zero SQL Injection:** All database queries utilize **PDO (PHP Data Objects)** with native parameterized prepared statements (`$pdo->prepare`).
+  - **Bcrypt Password Hashing:** User credentials are encrypted at rest using standard `password_hash($pass, PASSWORD_DEFAULT)` and verified via `password_verify()`.
+  - **Session Guardrails:** Role checks on every administrative page prevent unauthorized URL escalation.
+- **⚡ Universal Database Connector (`api_hotel/conexion.php`):**
+  - Built-in multi-environment intelligence: automatically detects and connects via **macOS MAMP Unix domain sockets (`/Applications/MAMP/tmp/mysql/mysql.sock`)** with password `'root'`, or falls back seamlessly to **Windows/Linux XAMPP (`localhost`)** with empty password `''`.
+- **👥 Dual-Role Dashboards (RBAC):**
+  - **👑 Administrator Panel (`administrador.php`):** Executive overview with real-time statistics (total staff, guests, room occupancy, and active reservations) and full Employee CRUD management.
+  - **🦁 Staff / Concierge Panel (`panel-empleado.php`):** Operational control center for room reservations, guest check-ins, and ecotourism activity enrollments.
+- **🎨 Hallmark Editorial UI / Anti-AI-Slop Craft:**
+  - Styled with an **Obsidian & Luxury Safari Gold** theme, glassmorphic login card (`index.php`), interactive stats cards with smooth hover elevation (`transform: translateY(-5px)`), and a fixed **Technical Portfolio Top Bar (`.hallmark-header`)**.
+- **⚙️ Automated Hospitality Business Logic:**
+  - Transactional SQL (`$pdo->beginTransaction()`) updates room availability (`hab_disp = 'Si' / 'No'`) automatically upon booking or canceling reservations.
 
 ---
 
-## 🧑‍💻 Uso
+### 📦 Quick Start & Installation
 
-Una vez configurado, puedes acceder al sistema con las credenciales de administrador por defecto:
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/Imaforbes/Hotel-Safaris.git
+cd Hotel-Safaris
+```
 
-- **Usuario:** `admin`
-- **Contraseña:** `admin123`
+#### 2. Import Database Schema (`database.sql`)
+The repository includes a complete, idempotent SQL schema and seed data file in the root directory: **`database.sql`**.
+- In **phpMyAdmin** (MAMP / XAMPP): Create database `hotel` (or let the script create it automatically) and click **Import** -> select `database.sql`.
+- Via **Terminal CLI**:
+  ```bash
+  # MAMP on macOS
+  /Applications/MAMP/Library/bin/mysql80/bin/mysql -S /Applications/MAMP/tmp/mysql/mysql.sock -u root -proot < database.sql
 
-Desde el panel de administrador, podrás crear nuevas cuentas de empleado para probar los diferentes roles.
+  # Standard MySQL / XAMPP
+  mysql -u root -p < database.sql
+  ```
+
+#### 3. Default Seed Test Accounts (Ready to Login)
+All preloaded accounts are encrypted with valid PHP Bcrypt hashes:
+
+| Role | Username | Password | Access Area |
+| :--- | :--- | :--- | :--- |
+| **Administrator** | `admin` | `admin123` | Executive Dashboard (`administrador.php`) |
+| **Administrator** | `iforbes` | `admin123` | Executive Dashboard (`administrador.php`) |
+| **Staff / Guide** | `empleado` | `empleado123` | Staff Operations (`panel-empleado.php`) |
+| **Staff / Guide** | `rsafari` | `empleado123` | Staff Operations (`panel-empleado.php`) |
+
+---
+
+### 📂 Repository Architecture
+
+```
+Hotel-Safaris/
+├── 📄 README.md                # Bilingual Technical & Architectural Guide
+├── 💾 database.sql             # MySQL 8.0 Schema & Preloaded Safari Seed Data
+├── 🚪 index.php                # Luxury Safari Login Portal (Bcrypt Auth)
+├── 👑 administrador.php        # Executive Dashboard & Employee CRUD
+├── 🦁 panel-empleado.php       # Operational Staff & Reservations Center
+├── ✏️ editar-empleado.php      # Employee Profile Editor View
+├── 📁 api_hotel/               # Backend API Endpoints & PDO Engine
+│   ├── 🔗 conexion.php         # Universal PDO DB Engine (MAMP + XAMPP Auto-Detect)
+│   ├── 🔐 perfiles.php         # Authentication & RBAC Session Controller
+│   ├── 🔑 generar_hash.php     # Bcrypt Hasher Utility
+│   ├── 📥 inserta-reserva.php  # Transactional Booking & Room Availability Logic
+│   └── 📋 consulta-*.php       # REST-like CRUD Endpoint Controllers
+└── 📁 css/
+    └── 🎨 style.css            # Custom Design System & Hallmark Header Tokens
+```
+
+---
+---
+
+## 🇲🇽 Documentación en Español
+
+### 📌 Descripción General
+**Sistema de Gestión Hotelera "Safari's"** es una plataforma web modular para la administración y operación diaria de un hotel o resort ecoturístico, desarrollada por **Imanol Forbes**. Refactorizado con estándares profesionales, el sistema separa la gestión administrativa de la operativa mediante un control de acceso por roles (RBAC) dual, respaldado por consultas asíncronas AJAX y seguridad de servidor PHP 8 + PDO MySQL.
+
+---
+
+### 🛡️ Características Principales
+- **Seguridad Antivulnerabilidades:** Conexión PDO con sentencias preparadas contra inyección SQL y contraseñas protegidas con `password_hash()` (Bcrypt).
+- **Conector Universal MAMP / XAMPP:** El archivo `api_hotel/conexion.php` detecta automáticamente si se está ejecutando en MAMP en macOS (usando socket Unix y contraseña `'root'`) o en XAMPP en Windows (usando `localhost` y contraseña vacía).
+- **Esquema Oficial Precargado (`database.sql`):** Incluye las 7 tablas relacionales del sistema (`empleados`, `cliente`, `habitaciones`, `reserva`, `actividades`, `cliente_actividad`, `recepcion`) con habitaciones temáticas Safari y 5 cuentas de prueba listas para usar.
+- **Diseño Editorial y Moderno:** Barra de Portafolio Técnico superior (`.hallmark-header`), tarjetas interactivas con elevación en hover y tema de color *Obsidiana & Oro Safari*.
+
+---
+
+### 👨‍💻 Autor
+**Imanol Forbes** — *Full-Stack Web & Applications Developer*  
+[Repositorio Oficial en GitHub ↗](https://github.com/Imaforbes/Hotel-Safaris)

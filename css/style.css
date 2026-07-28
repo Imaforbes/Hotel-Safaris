@@ -265,37 +265,126 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------
-* Estilos específicos de la página de Login
+* Estilos del Marco Editorial de Portafolio (Hallmark Craft Bar)
+* --------------------------------------------------------------------- */
+.hallmark-header {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: 'Courier New', Courier, monospace, 'Segoe UI Mono', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hallmark-header .badge-item {
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+}
+
+.hallmark-header .badge-system {
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.35);
+}
+
+.hallmark-header .badge-stack {
+    color: #facc15;
+    border-color: rgba(250, 204, 21, 0.35);
+}
+
+.hallmark-header .badge-dev {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.35);
+}
+
+.hallmark-header .badge-repo {
+    color: #ffffff;
+    background: linear-gradient(135deg, #334155, #1e293b);
+    border: 1px solid #64748b;
+    padding: 0.2rem 0.65rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.hallmark-header .badge-repo:hover {
+    background: #f8fafc;
+    color: #0f172a !important;
+    border-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------
+* Navbar principal Ejecutivo (Luxury Safari Accent)
+* --------------------------------------------------------------------- */
+.navbar.bg-dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-bottom: 2px solid #d4af37;
+}
+
+/* ---------------------------------------------------------------------
+* Tarjetas interactivas de Estadísticas (Hover & Lift Effect)
+* --------------------------------------------------------------------- */
+.card {
+    border-radius: 14px !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.25s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14) !important;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------
+* Estilos específicos de la página de Login (Luxury Safari & Obsidian)
 * --------------------------------------------------------------------- */
 body.login-page {
-    /* Puedes añadir esta clase al body de index.html */
-    background: linear-gradient(135deg, #6dd5ed, #2193b0);
-    /* Fondo degradado más vibrante */
+    background: linear-gradient(135deg, #0b1d16 0%, #1a3a2a 50%, #0f172a 100%) !important;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    /* Asegura que ocupe toda la altura de la vista */
     margin: 0;
 }
 
 .login-page .card {
-    background-color: rgba(255, 255, 255, 0.95);
-    /* Fondo más opaco para login */
-    border-radius: 1rem;
-    box-shadow: var(--shadow-medium);
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+    border-top: 4px solid #d4af37 !important;
 }
 
 .login-page .card-header {
-    background-color: #007bff !important;
-    /* Asegura el color primario de Bootstrap */
+    background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+    color: #ffffff !important;
     border-bottom: none;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    font-size: 1.5rem;
+    border-top-left-radius: 1.2rem !important;
+    border-top-right-radius: 1.2rem !important;
+    font-size: 1.45rem;
+    padding: 1.2rem;
 }
 
 .login-page .card-title {
     color: var(--text-color-dark);
-    font-weight: 600;
+    font-weight: 700;
 }

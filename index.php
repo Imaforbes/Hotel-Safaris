@@ -11,7 +11,13 @@
 </head>
 
 <body class="login-page">
-    <main class="d-flex align-items-center justify-content-center vh-100">
+    <header class="hallmark-header w-100">
+        <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S]</span>
+        <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
+    </header>
+    <main class="d-flex align-items-center justify-content-center flex-grow-1 w-100 p-3">
         <div class="card shadow-lg" style="width: 22rem;">
             <div class="card-header text-center bg-primary text-white">
                 <h2 class="mb-0">Hotel "Safari's"</h2>

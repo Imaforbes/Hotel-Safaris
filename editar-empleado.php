@@ -38,6 +38,13 @@ if (!$empleado) {
 </head>
 
 <body>
+
+    <header class="hallmark-header">
+        <span class="badge-item badge-system">[SYSTEM: HOTEL SAFARI'S - EDIT]</span>
+        <span class="badge-item badge-stack">[STACK: PHP 8 • PDO MYSQL • BOOTSTRAP 5]</span>
+        <span class="badge-item badge-dev">[DEV: IMANOL FORBES]</span>
+        <a href="https://github.com/Imaforbes/Hotel-Safaris" target="_blank" class="badge-repo">[GITHUB REPO ↗]</a>
+    </header>
     <main class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
